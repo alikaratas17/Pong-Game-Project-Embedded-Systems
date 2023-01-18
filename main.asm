@@ -4,7 +4,7 @@
 ; Author : alikaratas17
 ;
 
-; Uart Addition 1
+; Uart part 1 from lecture notes begin 
 .equ CR=13
 .equ LF = 10
 .equ BAUD_RATE = 9600
@@ -12,6 +12,7 @@
 .equ UBRRVAL = (CPU_CLOCK/(16*BAUD_RATE))-1
 .def SENTCHAR =r0
 .def RECCHAR =r1
+; Uart part 1 from lecture notes end 
 
 
 .equ U_hex = $55
@@ -80,7 +81,7 @@ RESET:
 	ldi temp, (1<<6) | (1<<7)
 	out DDRD, temp
 
-	; Uart Addition 2
+	; Uart part 2 from lecture notes begin
 	ldi temp, low(UBRRVAL) ; set the baud rate
 	out UBRRL, temp
 	ldi temp, high(UBRRVAL) ; set the baud rate
@@ -89,6 +90,7 @@ RESET:
 	out UCSRC, temp ; set 8-bit comm.
 	sbi UCSRB, TXEN ; enable UART serial transmitter
 	sbi UCSRB, RXEN ; enable UART serial receiver
+	; Uart part 2 from lecture notes end
 
 	; Load 0 to all ports
 	ldi temp, $00
