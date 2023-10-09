@@ -1,5 +1,4 @@
-# Pong-Game-Project-Embedded-Systems
-
+# Pong Game Project in Assembly Language
 - This is a course project I did for the Embedded Systems course, COMP/ELEC 317.
 - It is the well-known Pong Game implemented with an AVR Board using assembly.
 - The code for the game was completely written in assembly language and is contained in main.asm (around 850 instructions, over 1000 lines with comments and define directives)
